@@ -43,7 +43,7 @@ def setup_logging():
     root_logger.addHandler(file_handler)
     root_logger.addHandler(console_handler)
 
-    logging.info("Logging system initialized.")
+    logging.info("Sistema de logging inicializado.")
 
 def log_db_query(func):
     """
@@ -56,18 +56,18 @@ def log_db_query(func):
         params = args[2] if len(args) > 2 else ()
         
         start_time = time.time()
-        logging.info(f"Executing query: {query} with params: {params}")
+        logging.info(f"Ejecutando consulta: {query} con parámetros: {params}")
         
         try:
             result = func(*args, **kwargs)
             end_time = time.time()
             duration = end_time - start_time
             
-            log_message = f"Query executed successfully. Duration: {duration:.4f} seconds."
+            log_message = f"Consulta ejecutada exitosamente. Duración: {duration:.4f} segundos."
             
             # KAN-465: Alert if query exceeds threshold
             if duration > config.QUERY_TIME_ALERT_THRESHOLD_SECONDS:
-                logging.warning(f"LONG RUNNING QUERY: {log_message} (Threshold: {config.QUERY_TIME_ALERT_THRESHOLD_SECONDS}s)")
+                logging.warning(f"CONSULTA LENTA: {log_message} (Umbral: {config.QUERY_TIME_ALERT_THRESHOLD_SECONDS}s)")
             else:
                 logging.info(log_message)
             
@@ -75,7 +75,7 @@ def log_db_query(func):
         except Exception as e:
             end_time = time.time()
             duration = end_time - start_time
-            logging.error(f"Query failed after {duration:.4f} seconds. Query: {query}, Params: {params}, Error: {e}", exc_info=True)
+            logging.error(f"La consulta falló después de {duration:.4f} segundos. Consulta: {query}, Parámetros: {params}, Error: {e}", exc_info=True)
             # KAN-475: Do not expose sensitive error details to the user.
             # The error is logged here, and a generic message will be returned by the calling function.
             raise

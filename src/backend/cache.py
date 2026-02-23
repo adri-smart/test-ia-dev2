@@ -15,9 +15,9 @@ class RedisCache:
                 decode_responses=True
             )
             self.client.ping()
-            logging.info("Successfully connected to Redis cache.")
+            logging.info("Conexión exitosa con la caché de Redis.")
         except redis.exceptions.ConnectionError as e:
-            logging.error(f"Could not connect to Redis: {e}. Caching will be disabled.")
+            logging.error(f"No se pudo conectar a Redis: {e}. El almacenamiento en caché estará deshabilitado.")
             self.client = None
 
     def get(self, key):
@@ -30,10 +30,10 @@ class RedisCache:
         
         value = self.client.get(key)
         if value:
-            logging.info(f"Cache hit for key: {key}")
+            logging.info(f"Cache hit para la clave: {key}")
             return json.loads(value)
         
-        logging.info(f"Cache miss for key: {key}")
+        logging.info(f"Cache miss para la clave: {key}")
         return None
 
     def set(self, key, value, ttl=config.CACHE_TTL_SECONDS):
@@ -45,9 +45,9 @@ class RedisCache:
         
         try:
             self.client.set(key, json.dumps(value), ex=ttl)
-            logging.info(f"Set cache for key: {key} with TTL: {ttl}s")
+            logging.info(f"Establecido caché para la clave: {key} con TTL: {ttl}s")
         except Exception as e:
-            logging.error(f"Failed to set cache for key {key}: {e}")
+            logging.error(f"Falló al establecer caché para la clave {key}: {e}")
 
     def invalidate(self, key):
         """
@@ -57,7 +57,7 @@ class RedisCache:
             return
         
         self.client.delete(key)
-        logging.info(f"Invalidated cache for key: {key}")
+        logging.info(f"Caché invalidado para la clave: {key}")
 
 # Instantiate a global cache object
 cache = RedisCache()

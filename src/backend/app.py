@@ -29,9 +29,9 @@ def create_app():
 
     @app.route('/')
     def index():
-        return "Backend for Conversational Agent is running."
+        return "El backend del Agente Conversacional está en funcionamiento."
 
-    logging.info("Flask application created and configured.")
+    logging.info("Aplicación Flask creada y configurada.")
     return app
 
 if __name__ == '__main__':
