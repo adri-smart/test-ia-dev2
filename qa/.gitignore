@@ -1,0 +1,13 @@
+# Playwright reports
+playwright-report/
+test-results/
+playwright/.cache/
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+.env.*
+!.env.example

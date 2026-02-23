@@ -123,3 +123,6 @@ dmypy.json
 
 # pytype
 .pytype/
+
+# Node.js
+/node_modules/
