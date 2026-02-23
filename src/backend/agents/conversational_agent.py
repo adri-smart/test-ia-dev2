@@ -77,3 +77,10 @@ def run_agent(conversation_id: str, message: str, existing_messages: list):
     response_data["messages"] = current_messages + [("assistant", response_data.get("text", ""))]
 
     return response_data
+# LangChain/OpenAI Configuration (used as a stand-in for Gemini Enterprise)
+# KAN-466: This file helps manage credentials securely without hardcoding them.
+OPENAI_API_KEY="your_openai_api_key_here"
+
+# Redis Cache Configuration (KAN-490)
+REDIS_HOST=localhost
+REDIS_PORT=6379
