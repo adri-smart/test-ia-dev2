@@ -1,22 +1,22 @@
 variable "project_name" {
-  description = "The name of the project, used for naming resources."
+  description = "El nombre del proyecto, usado para nombrar recursos."
   type        = string
-  default     = "mall-plaza-manager"
+  default     = "customer-analysis-agent"
 }
 
 variable "project_id" {
-  description = "The GCP project ID to deploy resources into."
+  description = "El ID del proyecto de GCP donde se desplegarán los recursos."
   type        = string
 }
 
 variable "environment" {
-  description = "The deployment environment."
+  description = "El entorno de despliegue."
   type        = string
   default     = "dev"
 }
 
 variable "region" {
-  description = "The GCP region for deployment."
+  description = "La región de GCP para el despliegue."
   type        = string
   default     = "europe-west1"
 }
