@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Analysis Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- KAN-488: Using Chart.js for simple visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- KAN-487: Minimal conversational interface for demonstration -->
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Customer Analysis Agent</h2>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-input-form">
+            <input type="text" id="chat-input" placeholder="Ask something about your customers...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

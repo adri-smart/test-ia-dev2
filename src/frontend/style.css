@@ -1,0 +1,134 @@
+/* KAN-487: Basic styling for the conversational interface */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 80%;
+    max-width: 800px;
+    height: 90vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 70%;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.assistant-message {
+    background-color: #e9e9eb;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    position: relative;
+}
+
+.chat-input-form {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1em;
+    outline: none;
+}
+
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+/* KAN-488: Styles for visualizations */
+.visualization-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* KAN-489: Styles for feedback mechanism */
+.feedback-container {
+    margin-top: 8px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.stars {
+    cursor: pointer;
+}
+
+.star:hover {
+    color: orange;
+}
+
+.feedback-comment {
+    display: none; /* Hidden by default */
+    margin-top: 5px;
+}
+
+.feedback-comment textarea {
+    width: 90%;
+    padding: 5px;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.feedback-comment button {
+    font-size: 0.9em;
+    padding: 3px 8px;
+}
