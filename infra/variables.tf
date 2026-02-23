@@ -1,7 +1,12 @@
 variable "project_name" {
-  description = "The name of the project."
+  description = "The name of the project, used for naming resources."
   type        = string
-  default     = "kan463-agent"
+  default     = "mall-plaza-manager"
+}
+
+variable "project_id" {
+  description = "The GCP project ID to deploy resources into."
+  type        = string
 }
 
 variable "environment" {
@@ -10,8 +15,8 @@ variable "environment" {
   default     = "dev"
 }
 
-variable "location" {
-  description = "The Azure region for deployment."
+variable "region" {
+  description = "The GCP region for deployment."
   type        = string
-  default     = "West Europe"
+  default     = "europe-west1"
 }

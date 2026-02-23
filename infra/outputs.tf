@@ -1,11 +1,19 @@
-output "resource_group_name" {
-  value = azurerm_resource_group.rg.name
+output "cloud_run_service_url" {
+  description = "The URL of the deployed Cloud Run service."
+  value       = google_cloud_run_v2_service.default.uri
 }
 
-output "web_app_hostname" {
-  value = azurerm_linux_web_app.web_app.default_hostname
+output "bigquery_dataset_id" {
+  description = "The ID of the BigQuery dataset."
+  value       = google_bigquery_dataset.default.dataset_id
 }
 
-output "redis_hostname" {
-  value = azurerm_redis_cache.redis.hostname
+output "firestore_database_name" {
+  description = "The name of the Firestore database."
+  value       = google_firestore_database.database.name
+}
+
+output "backup_bucket_name" {
+  description = "The name of the Cloud Storage bucket for backups."
+  value       = google_storage_bucket.backups.name
 }
